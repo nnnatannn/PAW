@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Tugas Individu 3 - Pemrograman Aplikasi Web</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f1f5f9;
+        }
+
+        .page-container {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #0f172a;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            text-align: center;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+
+        .header-sub {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-top: -8px;
+            margin-bottom: 25px;
+        }
+
+        .identity-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-left: 5px solid #2563eb;
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+
+        .identity-box table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .identity-box td {
+            padding: 5px 8px;
+            font-size: 0.95rem;
+        }
+
+        .identity-box td.label {
+            width: 180px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        ul,
+        ol {
+            padding-left: 24px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        code {
+            background-color: #f1f5f9;
+            color: #0284c7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 12px 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 0.85rem;
+        }
+
+        .screenshot-placeholder {
+            border: 2px dashed #94a3b8;
+            background-color: #f8fafc;
+            padding: 25px;
+            text-align: center;
+            border-radius: 6px;
+            margin: 15px 0;
+            color: #64748b;
+        }
+
+        .screenshot-placeholder img {
+            max-width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .caption {
+            font-size: 0.88rem;
+            font-style: italic;
+            color: #475569;
+            margin-top: 6px;
+        }
+
+        .table-summary {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        .table-summary th,
+        .table-summary td {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        .table-summary th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        .no-print {
+            background-color: #dbeafe;
+            border: 1px solid #93c5fd;
+            color: #1e40af;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-print {
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+
+            .page-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <div class="no-print">
+            <span>💡 <strong>Petunjuk:</strong> Anda dapat mencetak halaman ini langsung ke PDF dengan menekan tombol di
+                samping atau menekan <code>Ctrl + P</code> lalu pilih <em>Save as PDF</em>.</span>
+            <button class="btn-print" onclick="window.print()">Cetak / Simpan PDF</button>
+        </div>
+
+        <h1>LAPORAN TUGAS INDIVIDU 3</h1>
+        <div class="header-sub">Pengembangan Aplikasi Web | Institut Teknologi Sumatera (ITERA)</div>
+
+        <!-- 1. IDENTITAS MAHASISWA -->
+        <div class="identity-box">
+            <table>
+                <tr>
+                    <td class="label">Nama Mahasiswa</td>
+                    <td>: <strong>Yonatanoel Petra Hutabarat</strong></td>
+                </tr>
+                <tr>
+                    <td class="label">NIM</td>
+                    <td>: <strong>123140100</strong></td>
+                </tr>
+                <tr>
+                    <td class="label">Kelas</td>
+                    <td>: <strong>PAW RB</strong></td>
+                </tr>
+                <tr>
+                    <td class="label">Link Repository GitHub</td>
+                    <td>: <a href="https://github.com/nnnatannn/PAW/tree/main/task_3"
+                            target="_blank">https://github.com/nnnatannn/PAW/tree/main/task_3</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 2. DESKRIPSI TUGAS -->
+        <h2>1. Deskripsi & Ketentuan Tugas</h2>
+        <p>Berdasarkan modul <strong>Pertemuan 4 (Tabel, Formulir, Layout, dan Web Media)</strong>, tugas individu 3
+            memiliki kriteria sebagai berikut:</p>
+        <ul>
+            <li><strong>Dua Halaman Web:</strong>
+                <ul>
+                    <li>Halaman pendaftaran yang didesain menggunakan form dengan <code>method="GET"</code>.</li>
+                    <li>Halaman detail informasi pendaftar yang dibuat dalam format data dummy.</li>
+                </ul>
+            </li>
+            <li><strong>Desain Query String:</strong> Melempar data dari halaman pendaftaran ke halaman detail melalui
+                parameter URL (query string), hanya mendesain query string dan tidak melakukan pemrosesan data backend.
+            </li>
+            <li><strong>Desain Kedua Halaman dengan CSS:</strong>
+                <ul>
+                    <li>Menggunakan minimal 3 jenis selector CSS.</li>
+                    <li>Mendesain komponen layout, box model, tabel, dan formulir dengan CSS secara rapi dan estetis.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- 3. STRUKTUR BERKAS -->
+        <h2>2. Struktur Berkas Proyek</h2>
+        <p>Seluruh berkas tugas disimpan dalam direktori <code>task_3/</code> sesuai ketentuan pengumpulan:</p>
+        <pre>task_3/
+├── index.html       (Halaman Formulir Pendaftaran dengan HTTP GET)
+├── detail.html      (Halaman Detail Informasi Dummy & Tabel Data)
+├── style.css        (Stylesheet Terpadu untuk Layout, Form, dan Tabel)
+└── LAPORAN_TUGAS_3.md / laporan_print.html</pre>
+
+        <!-- 4. PENJELASAN KODE PROGRAM -->
+        <h2>3. Penjelasan Kode Program</h2>
+
+        <h3>A. Halaman Formulir Pendaftaran (<code>index.html</code>)</h3>
+        <p>Halaman ini dirancang untuk menerima input identitas calon anggota organisasi mahasiswa. Fitur-fitur utama
+            kode:</p>
+        <ul>
+            <li><strong>Form Method GET:</strong> Didefinisikan dengan tag
+                <code>&lt;form id="form-pendaftaran" action="detail.html" method="GET"&gt;</code>. Saat formulir
+                dikirimkan, peramban akan merangkai seluruh nilai kontrol input menjadi Query String di URL menuju ke
+                <code>detail.html</code>.
+            </li>
+            <li><strong>Kontrol Input Beragam:</strong>
+                <ul>
+                    <li><code>&lt;input type="text" name="nama"&gt;</code> &
+                        <code>&lt;input type="text" name="nim"&gt;</code>: Untuk input data teks.
+                    </li>
+                    <li><code>&lt;input type="email" name="email"&gt;</code>: Untuk validasi format email resmi
+                        mahasiswa.</li>
+                    <li><code>&lt;input type="radio" name="gender"&gt;</code>: Memilih jenis kelamin (Laki-laki /
+                        Perempuan).</li>
+                    <li><code>&lt;select name="prodi"&gt;</code>: Pilihan program studi menggunakan menu dropdown.</li>
+                    <li><code>&lt;input type="checkbox" name="minat"&gt;</code>: Pilihan multipel untuk peminatan
+                        divisi.</li>
+                    <li><code>&lt;input type="date" name="tgl_lahir"&gt;</code>: Pilihan tanggal lahir.</li>
+                    <li><code>&lt;textarea name="alamat"&gt;</code>: Input teks multi-baris untuk alamat tempat tinggal.
+                    </li>
+                    <li><code>&lt;button type="submit"&gt;</code> dan <code>&lt;button type="reset"&gt;</code>: Tombol
+                        aksi pendaftaran.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>B. Halaman Detail Informasi Dummy (<code>detail.html</code>)</h3>
+        <p>Halaman ini menampilkan representasi data calon anggota yang telah terdaftar dalam bentuk dummy:</p>
+        <ul>
+            <li><strong>Visualisasi Query String:</strong> Dilengkapi elemen box <code>#display-query-string</code> yang
+                menampilkan string parameter URL yang dikirimkan dari formulir sebelumnya.</li>
+            <li><strong>Tabel Data Semantik:</strong> Menggunakan elemen tabel HTML lengkap (<code>&lt;table&gt;</code>,
+                <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>,
+                <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>).
+            </li>
+            <li><strong>Spanning Columns:</strong> Menggunakan atribut <code>colspan="3"</code> pada baris footer
+                (<code>&lt;tfoot&gt;</code>) untuk menggabungkan 3 kolom ringkasan status berkas.</li>
+            <li><strong>Tombol Navigasi:</strong> Tautan
+                <code>&lt;a href="index.html" class="btn btn-outline"&gt;</code> untuk mempermudah pengguna kembali ke
+                halaman form.
+            </li>
+        </ul>
+
+        <h3>C. Lembar Gaya CSS (<code>style.css</code>)</h3>
+        <p>Kode CSS mengimplementasikan ketentuan desain tingkat lanjut dari materi P4:</p>
+        <table class="table-summary">
+            <thead>
+                <tr>
+                    <th>Komponen / Kriteria</th>
+                    <th>Implementasi pada CSS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Minimal 3 Selector</strong></td>
+                    <td>
+                        1. <em>Element Selector</em> (<code>body</code>, <code>h1</code>, <code>table</code>,
+                        <code>th</code>, <code>td</code>)<br>
+                        2. <em>Class Selector</em> (<code>.card</code>, <code>.form-control</code>,
+                        <code>.custom-table</code>, <code>.btn</code>)<br>
+                        3. <em>ID Selector</em> (<code>#form-section</code>, <code>#detail-section</code>)<br>
+                        4. <em>Pseudo-class</em> (<code>:hover</code>, <code>:focus</code>,
+                        <code>:nth-child(even)</code>)<br>
+                        5. <em>Attribute Selector</em> (<code>input[type="radio"]</code>,
+                        <code>input[type="checkbox"]</code>)
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Box Model</strong></td>
+                    <td>Menggunakan <code>box-sizing: border-box</code>, <code>padding: 2rem</code>,
+                        <code>border-radius: 16px</code>, dan drop-shadow bertingkat (<code>box-shadow</code>).
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Layout Responsif</strong></td>
+                    <td>Penerapan <em>Flexbox</em> pada kontainer utama dan baris form (<code>.form-row</code>), serta
+                        <em>Media Query</em> untuk layar seluler (&le; 640px).
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Styling Tabel</strong></td>
+                    <td>Menerapkan <code>border-collapse: collapse</code>, <em>zebra striping</em> (warna latar baris
+                        genap bergantian), serta efek interaktif <em>hover</em> warna biru muda pada baris tabel saat
+                        kursor melintas.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 5. TAMPILAN SCREENSHOT & PENJELASAN -->
+        <h2>4. Tampilan Screenshot Aplikasi & Penjelasan</h2>
+
+        <h3>Screenshot 1: Tampilan Form Pendaftaran (<code>index.html</code>)</h3>
+        <div class="screenshot-placeholder">
+            <img src="Tampilan Form Pendaftaran.png" alt="Tampilan Form Pendaftaran"
+                style="max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+            <div class="caption">Gambar 1: Halaman Formulir Pendaftaran dengan Card Layout dan Kontrol Form HTML5</div>
+        </div>
+        <p><strong>Penjelasan:</strong> Tampilan awal form pendaftaran sebelum data diisi, memperlihatkan header dengan
+            gradien biru, box kartu putih dengan shadow lembut, serta seluruh komponen form (teks, radio, dropdown,
+            checkbox, tanggal, textarea).</p>
+
+        <h3>Screenshot 2: Form Pendaftaran Setelah Diisi Lengkap</h3>
+        <div class="screenshot-placeholder">
+            <img src="Form Pendaftaran Setelah Diisi Lengkap.png" alt="Form Pendaftaran Setelah Diisi Lengkap"
+                style="max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+            <div class="caption">Gambar 2: Pengisian Data Lengkap pada Formulir Pendaftaran</div>
+        </div>
+        <p><strong>Penjelasan:</strong> Seluruh kolom input telah terisi lengkap dengan data calon anggota baru
+            (Yonatanoel Petra Hutabarat - 123140100) dan siap
+            dikirimkan dengan menekan tombol "Kirim Pendaftaran".</p>
+
+        <h3>Screenshot 3: Halaman Detail & Query String pada Address Bar (<code>detail.html</code>)</h3>
+        <div class="screenshot-placeholder">
+            <img src="Halaman Detail &amp; Query String pada Address Bar.png"
+                alt="Halaman Detail & Query String pada Address Bar"
+                style="max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+            <div class="caption">Gambar 3: Halaman Detail Informasi Dummy dengan Query String pada URL</div>
+        </div>
+        <p><strong>Penjelasan:</strong> Setelah tombol submit ditekan, browser berpindah ke halaman
+            <code>detail.html</code> dan membawa data form sebagai query string di address bar (contoh:
+            <code>detail.html?nama=Yonatanoel+Petra+Hutabarat&nim=123140100&email=...</code>). Di dalam halaman,
+            terdapat kotak notifikasi
+            yang mengonfirmasi penerimaan query string tersebut.
+        </p>
+
+        <h3>Screenshot 4: Tampilan Tabel Data Dummy dan Efek Interaktif (Hover)</h3>
+        <div class="screenshot-placeholder">
+            <img src="Tampilan Tabel Data Dummy dan Efek Interaktif.png"
+                alt="Tampilan Tabel Data Dummy dan Efek Interaktif"
+                style="max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+            <div class="caption">Gambar 4: Tabel Data Dummy dengan Zebra Striping dan Efek Hover</div>
+        </div>
+        <p><strong>Penjelasan:</strong> Tabel data dummy disajikan secara terstruktur menggunakan semantik tabel HTML,
+            dilengkapi badge status, pewarnaan baris berselang-seling (zebra stripes), serta baris yang tersorot warna
+            biru muda saat kursor mouse melintas di atasnya (hover effect).</p>
+
+        <!-- 6. KESIMPULAN -->
+        <h2>5. Kesimpulan</h2>
+        <p>Seluruh kriteria pada <strong>TUGAS INDIVIDU 3</strong> telah diimplementasikan dengan tuntas dan tepat
+            sasaran:</p>
+        <ol>
+            <li>Dua halaman web telah saling terhubung dengan navigasi yang intuitif.</li>
+            <li>Pengiriman data dirancang menggunakan form dengan metode HTTP GET sehingga menghasilkan parameter query
+                string pada URL.</li>
+            <li>Halaman detail menyajikan data dummy terstruktur dengan tabel HTML dan fitur <code>colspan</code>.</li>
+            <li>CSS menerapkan lebih dari 3 tipe selector, box model, layout responsif (Flexbox), serta desain estetis
+                pada formulir dan tabel.</li>
+        </ol>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Mahasiswa - Pemrograman Web</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <span class="badge">Tugas Individu 3 - Pemrograman Web</span>
+            <h1>Formulir Pendaftaran Anggota Komunitas Web IT</h1>
+            <p>Silakan isi formulir di bawah ini dengan lengkap dan benar.</p>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Kotak Card Formulir -->
+        <section class="card form-card" id="form-section">
+            <div class="card-header">
+                <h2>Data Calon Anggota</h2>
+                <p class="subtitle">Data yang diisi akan dikirim ke halaman detail melalui <strong>HTTP Method GET</strong> (Query String).</p>
+            </div>
+
+            <!-- Form Pendaftaran dengan method GET dan action ke detail.html -->
+            <form id="form-pendaftaran" action="detail.html" method="GET">
+                
+                <!-- Input Nama Lengkap -->
+                <div class="form-group">
+                    <label for="nama" class="form-label">Nama Lengkap <span class="required">*</span></label>
+                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Contoh: Yonathan" required>
+                </div>
+
+                <!-- Input NIM dan Email (Layout Grid 2 Kolom) -->
+                <div class="form-row">
+                    <div class="form-group col-half">
+                        <label for="nim" class="form-label">NIM <span class="required">*</span></label>
+                        <input type="text" id="nim" name="nim" class="form-control" placeholder="Contoh: 122140001" required>
+                    </div>
+                    <div class="form-group col-half">
+                        <label for="email" class="form-label">Email Mahasiswa <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Contoh: nama@student.itera.ac.id" required>
+                    </div>
+                </div>
+
+                <!-- Input Pilihan Jenis Kelamin (Radio) -->
+                <div class="form-group">
+                    <label class="form-label">Jenis Kelamin <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="custom-radio">
+                            <input type="radio" name="gender" value="Laki-laki" checked required>
+                            <span class="radio-dot"></span>
+                            Laki-laki
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="gender" value="Perempuan">
+                            <span class="radio-dot"></span>
+                            Perempuan
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Input Program Studi (Select Dropdown) -->
+                <div class="form-group">
+                    <label for="prodi" class="form-label">Program Studi <span class="required">*</span></label>
+                    <select id="prodi" name="prodi" class="form-select" required>
+                        <option value="" disabled selected>-- Pilih Program Studi --</option>
+                        <option value="Teknik Informatika">Teknik Informatika</option>
+                        <option value="Sistem Informasi">Sistem Informasi</option>
+                        <option value="Teknik Elektro">Teknik Elektro</option>
+                        <option value="Sains Data">Sains Data</option>
+                        <option value="Teknik Telekomunikasi">Teknik Telekomunikasi</option>
+                    </select>
+                </div>
+
+                <!-- Input Pilihan Minat / Divisi (Checkbox) -->
+                <div class="form-group">
+                    <label class="form-label">Bidang Minat</label>
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="minat" value="Frontend Development">
+                            <span class="checkbox-box"></span>
+                            Frontend Development
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="minat" value="Backend Development">
+                            <span class="checkbox-box"></span>
+                            Backend Development
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="minat" value="UI/UX Design">
+                            <span class="checkbox-box"></span>
+                            UI/UX Design
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Input Tanggal Lahir (Date Picker) -->
+                <div class="form-group">
+                    <label for="tgl_lahir" class="form-label">Tanggal Lahir</label>
+                    <input type="date" id="tgl_lahir" name="tgl_lahir" class="form-control">
+                </div>
+
+                <!-- Input Alamat Domisili (Textarea) -->
+                <div class="form-group">
+                    <label for="alamat" class="form-label">Alamat Domisili</label>
+                    <textarea id="alamat" name="alamat" class="form-control" rows="3" placeholder="Masukkan alamat tempat tinggal saat ini..."></textarea>
+                </div>
+
+                <!-- Tombol Aksi (Submit & Reset) -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="btn-submit">
+                        Kirim Pendaftaran
+                    </button>
+                    <button type="reset" class="btn btn-secondary" id="btn-reset">
+                        Reset Form
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Informasi Bantuan Mengenai GET Query String -->
+        <aside class="card info-card">
+            <h3>Catatan Teknis (HTTP Method GET)</h3>
+            <p>Ketika tombol <strong>"Kirim Pendaftaran"</strong> ditekan, browser akan mengirimkan seluruh data input di atas sebagai parameter URL (Query String) menuju ke halaman <code>detail.html</code>.</p>
+            <div class="url-preview-box">
+                <span class="preview-label">Contoh Format URL:</span>
+                <code>detail.html?nama=...&nim=...&email=...&gender=...&prodi=...</code>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Pengembangan Aplikasi Web - Institut Teknologi Sumatera (ITERA)</p>
+    </footer>
+
+</body>
+</html>

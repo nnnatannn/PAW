@@ -1,0 +1,552 @@
+/* ==========================================================================
+   TUGAS INDIVIDU 3 - PEMROGRAMAN APLIKASI WEB (ITERA)
+   File        : style.css
+   Deskripsi   : Berkas styling untuk Halaman Formulir Pendaftaran (index.html)
+                 dan Halaman Detail Informasi Dummy (detail.html).
+   Implementasi: Layout responsif (Flexbox & Grid), Box Model, Desain Formulir,
+                 Desain Tabel Modern (Zebra Stripes, Hover Effect), dan Minimal
+                 5 ragam tipe CSS Selector.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS RESET & VARIABEL TEMA (Root)
+   -------------------------------------------------------------------------- */
+:root {
+    --primary-color: #1e40af;       /* Royal Blue */
+    --primary-hover: #1d4ed8;
+    --primary-light: #eff6ff;
+    --secondary-color: #64748b;     /* Slate */
+    --secondary-hover: #475569;
+    --accent-color: #0284c7;        /* Sky Blue */
+    --success-color: #10b981;       /* Emerald */
+    --success-light: #ecfdf5;
+    --bg-body: #f8fafc;             /* Very light slate */
+    --card-bg: #ffffff;
+    --text-main: #0f172a;           /* Dark slate */
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --border-focus: #3b82f6;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --transition: all 0.25s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   2. ELEMENT SELECTOR (Tag Selector)
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 0.5rem;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+    background: #1e293b;
+    color: #38bdf8;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    font-size: 0.88rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. HEADER & HERO SECTION
+   -------------------------------------------------------------------------- */
+.main-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #38bdf8 100%);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header-content p {
+    color: #e0f2fe;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Badge Header */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.badge-success {
+    background-color: #10b981;
+    border-color: #059669;
+}
+
+/* --------------------------------------------------------------------------
+   4. LAYOUT & BOX MODEL (Flexbox & Containers)
+   -------------------------------------------------------------------------- */
+.main-container {
+    max-width: 860px;
+    width: 100%;
+    margin: -1.5rem auto 2.5rem auto;
+    padding: 0 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+/* Box Card Styling */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-header .subtitle {
+    margin-top: 0.35rem;
+    font-size: 0.9rem;
+}
+
+/* Notification & Info Card */
+.notification-card {
+    display: flex;
+    gap: 1.25rem;
+    background-color: #f0f9ff;
+    border: 1px solid #bae6fd;
+}
+
+.notification-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.notification-body {
+    flex: 1;
+}
+
+.info-card {
+    background-color: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    padding: 1.25rem 1.75rem;
+}
+
+.url-preview-box {
+    margin: 0.85rem 0;
+    padding: 0.75rem 1rem;
+    background: #0f172a;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    word-break: break-all;
+}
+
+.preview-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.url-preview-box code {
+    background: transparent;
+    padding: 0;
+    font-size: 0.9rem;
+    color: #38bdf8;
+}
+
+.note-text {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   5. FORM STYLING & CONTROLS
+   -------------------------------------------------------------------------- */
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.col-half {
+    flex: 1;
+}
+
+.form-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.45rem;
+    color: var(--text-main);
+}
+
+.required {
+    color: #ef4444;
+}
+
+/* Input, Select, Textarea */
+.form-control,
+.form-select {
+    width: 100%;
+    padding: 0.75rem 0.95rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background-color: #ffffff;
+    color: var(--text-main);
+    outline: none;
+    transition: var(--transition);
+}
+
+/* Pseudo-class: Focus */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Radio & Checkbox Styling */
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 0.25rem;
+}
+
+.custom-radio,
+.custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Attribute Selector */
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--primary-color);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Form Buttons */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn {
+    padding: 0.8rem 1.6rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(30, 64, 175, 0.25);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 6px 12px rgba(30, 64, 175, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   6. TABEL HTML & CSS STYLING (Modern Table Design)
+   -------------------------------------------------------------------------- */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Table Design with border-collapse and border-radius */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    text-align: left;
+    font-size: 0.92rem;
+}
+
+/* Table Header */
+.custom-table thead {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #ffffff;
+}
+
+.custom-table th {
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+.th-no {
+    width: 60px;
+    text-align: center;
+}
+
+.th-field {
+    width: 230px;
+}
+
+.th-status {
+    width: 130px;
+    text-align: center;
+}
+
+/* Table Body Cells */
+.custom-table td {
+    padding: 0.95rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-main);
+    vertical-align: middle;
+}
+
+.field-title {
+    font-weight: 600;
+    color: #334155;
+}
+
+/* Zebra Stripes: Pseudo-class :nth-child(even) */
+.custom-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Interactive Row Hover Effect: Pseudo-class :hover */
+.custom-table tbody tr:hover {
+    background-color: #e0f2fe;
+    transition: background-color 0.2s ease;
+}
+
+/* Table Footer (tfoot) */
+.custom-table tfoot {
+    background-color: #f1f5f9;
+    font-weight: 600;
+}
+
+.custom-table tfoot td {
+    padding: 1rem 1.25rem;
+    border-top: 2px solid #cbd5e1;
+    border-bottom: none;
+}
+
+.tfoot-summary {
+    color: var(--primary-color);
+}
+
+/* Status Tags inside Table */
+.tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.tag-verified {
+    background-color: #dcfce7;
+    color: #15803d;
+    border: 1px solid #86efac;
+}
+
+.tag-neutral {
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+}
+
+.tag-success {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    border: 1px solid #93c5fd;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.card-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* --------------------------------------------------------------------------
+   7. ID SELECTORS
+   -------------------------------------------------------------------------- */
+#form-section {
+    border-top: 4px solid var(--primary-color);
+}
+
+#detail-section {
+    border-top: 4px solid #10b981;
+}
+
+#query-info-box {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. FOOTER
+   -------------------------------------------------------------------------- */
+.main-footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    background-color: #ffffff;
+    margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   9. MEDIA QUERY (RESPONSIVE DESIGN)
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+    .main-header {
+        padding: 2rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

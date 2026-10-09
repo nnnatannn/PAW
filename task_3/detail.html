@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Informasi Pendaftar - Pemrograman Web</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <span class="badge badge-success">Status: Data Pendaftar Diterima</span>
+            <h1>Detail Informasi Pendaftar</h1>
+            <p>Halaman ini menampilkan representasi data pendaftar (Data Dummy) dan simulasi penerimaan Query String.
+            </p>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <!-- Box Notifikasi Query String yang Diterima -->
+        <section class="card notification-card" id="query-info-box">
+            <div class="notification-icon">ℹ️</div>
+            <div class="notification-body">
+                <h3>Informasi Desain Query String (HTTP GET)</h3>
+                <p>Data dari formulir pendaftaran berhasil dikirim melalui Query String di address bar peramban (URL).
+                </p>
+                <div class="url-preview-box">
+                    <span class="preview-label">Query String yang dikirim via URL:</span>
+                    <code id="display-query-string">Memuat query string dari browser...</code>
+                </div>
+                <small class="note-text">*Sesuai instruksi tugas, halaman ini hanya mendesain query string dan tidak
+                    melakukan pemrosesan data backend.</small>
+            </div>
+        </section>
+
+        <!-- Box Tabel Detail Informasi Pendaftar (Dummy Data) -->
+        <section class="card table-card" id="detail-section">
+            <div class="card-header">
+                <h2>Tabel Ringkasan Data Calon Anggota (Dummy)</h2>
+                <p class="subtitle">Struktur tabel menggunakan elemen HTML semantik <code>&lt;table&gt;</code>,
+                    <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, dan CSS styling modern (zebra stripes, hover
+                    effect).
+                </p>
+            </div>
+
+            <!-- Tabel Data Dummy -->
+            <div class="table-responsive">
+                <table class="custom-table" id="tabel-pendaftar">
+                    <thead>
+                        <tr>
+                            <th class="th-no">No</th>
+                            <th class="th-field">Atribut / Kategori</th>
+                            <th class="th-value">Detail Data (Dummy)</th>
+                            <th class="th-status">Status Validasi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td class="field-title">Nama Lengkap</td>
+                            <td>Yonatanoel Petra Hutabarat</td>
+                            <td><span class="tag tag-verified">Terverifikasi</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">2</td>
+                            <td class="field-title">Nomor Induk Mahasiswa (NIM)</td>
+                            <td>123140100</td>
+                            <td><span class="tag tag-verified">Terverifikasi</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">3</td>
+                            <td class="field-title">Alamat Email</td>
+                            <td>yonata.123140100@student.itera.ac.id</td>
+                            <td><span class="tag tag-verified">Terverifikasi</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">4</td>
+                            <td class="field-title">Jenis Kelamin</td>
+                            <td>Laki-laki</td>
+                            <td><span class="tag tag-neutral">Lengkap</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">5</td>
+                            <td class="field-title">Program Studi</td>
+                            <td>Teknik Informatika</td>
+                            <td><span class="tag tag-neutral">Lengkap</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">6</td>
+                            <td class="field-title">Bidang Minat Terpilih</td>
+                            <td>Frontend Development & UI/UX Design</td>
+                            <td><span class="tag tag-neutral">Lengkap</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">7</td>
+                            <td class="field-title">Tanggal Lahir</td>
+                            <td>15 Mei 2004</td>
+                            <td><span class="tag tag-neutral">Lengkap</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">8</td>
+                            <td class="field-title">Alamat Domisili</td>
+                            <td>Jl. Terusan Ryacudu, Way Hui, Jati Agung, Lampung Selatan</td>
+                            <td><span class="tag tag-neutral">Lengkap</span></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="tfoot-summary">
+                                <strong>Total Kelengkapan Berkas:</strong> 8 Dari 8 Kolom Terisi
+                            </td>
+                            <td class="text-center">
+                                <span class="tag tag-success">Siap Diproses</span>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <!-- Tombol Navigasi Kembali -->
+            <div class="card-actions">
+                <a href="index.html" class="btn btn-outline" id="btn-back">
+                    &larr; Kembali ke Form Pendaftaran
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Pengembangan Aplikasi Web - Institut Teknologi Sumatera (ITERA)</p>
+    </footer>
+
+    <!-- Script ringan untuk menampilkan query string aktual di URL bar agar visualisasi jelas dan interaktif -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const queryElement = document.getElementById('display-query-string');
+            const searchString = window.location.search;
+            if (searchString && searchString.length > 1) {
+                queryElement.textContent = window.location.pathname.split('/').pop() + searchString;
+            } else {
+                queryElement.textContent = 'detail.html?nama=Yonatanoel Petra Hutabarat&nim=123140100&email=yonata%40student.itera.ac.id&gender=Laki-laki&prodi=Teknik+Informatika&minat=Frontend+Development';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
